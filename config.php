@@ -1,9 +1,12 @@
 <?php
-
-$env = parse_ini_file(__DIR__ . '/.env');
+$host = getenv('DB_HOST');
+$db   = getenv('DB_NAME');
+$user = getenv('DB_USER');
+$pass = getenv('DB_PASSWORD');
 
 $pdo = new PDO(
-    "mysql:host={$env['DB_HOST']};dbname={$env['DB_NAME']};charset=utf8mb4",
-    $env['DB_USER'],
-    $env['DB_PASSWORD']
+    "mysql:host=$host;dbname=$db;charset=utf8mb4",
+    $user,
+    $pass,
+    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
