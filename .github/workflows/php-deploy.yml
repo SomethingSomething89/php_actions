@@ -39,4 +39,4 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        script: sudo /usr/local/bin/deploy_app.sh 89412 8005
+        script: sudo /usr/local/bin/deploy_app.sh 89412 8014
